@@ -10,6 +10,11 @@
 </view>
 <view wx:if="{{activeIndex===0}}">
 	<view class="text">111111111</view>
+	<view class="conuter">
+		<view class="btn jian" bindtap="count_jian">-</view>
+		<view>{{conuter}}</view>
+		<view class="btn add" bindtap="count_add">+</view>
+	</view>
 </view>
 <view wx:if="{{activeIndex===1}}">
 	<view class="text">222222222</view>

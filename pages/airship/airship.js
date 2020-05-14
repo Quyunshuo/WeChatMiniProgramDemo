@@ -16,6 +16,19 @@ Page({
     })
   },
 
+  count_jian() {
+    if (this.data.conuter > 0) {
+      this.setData({
+        conuter: this.data.conuter - 1
+      })
+    }
+  },
+  count_add() {
+    this.setData({
+      conuter: this.data.conuter + 1
+    })
+  },
+
   /**
    * 页面的初始数据
    */
@@ -23,6 +36,7 @@ Page({
     userList: ["Android", "前端", "ios"],
     activeIndex: 0,
     isShowShadow: true,
+    conuter: 0,
   },
 
   /**

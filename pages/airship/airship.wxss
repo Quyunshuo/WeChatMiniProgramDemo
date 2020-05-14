@@ -49,3 +49,31 @@
   text-align: center;
   line-height: 35rpx;
 }
+
+.conuter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conuter view {
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 62rpx;
+  text-align: center;
+  border: 2rpx solid transparent;
+}
+
+.conuter .btn.add {
+  background: skyblue;
+  color: white;
+  line-height: 55rpx;
+  border-radius: 50%;
+}
+
+.conuter .btn.jian {
+  border: 2rpx solid skyblue;
+  color: skyblue;
+  line-height: 55rpx;
+  border-radius: 50%;
+}
