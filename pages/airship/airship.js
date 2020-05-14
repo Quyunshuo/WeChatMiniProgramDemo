@@ -30,6 +30,19 @@ Page({
   },
 
   /**
+   * 扫一扫
+   */
+  scancode() {
+    wx.scanCode({
+      complete: (res) => {
+        wx.navigateTo({
+          url: '../detail/detail?id=' + res.result,
+        })
+      },
+    })
+  },
+
+  /**
    * 页面的初始数据
    */
   data: {
