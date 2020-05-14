@@ -1,2 +1,14 @@
 <!--pages/steamer/steamer.wxml-->
-<text>pages/steamer/steamer.wxml</text>
+<!-- 轮播图 -->
+<swiper indicator-dots="true" autoplay="true" interval="3000" circular="true" indicator-color="#8E8E8E" indicator-active-color="#fff">
+	<swiper-item wx:for="{{swiperItem}}" wx:key="item">
+		<image mode="widthFix" src="{{item}}"></image>
+	</swiper-item>
+</swiper>
+<!-- 女孩列表 -->
+<view class="menu flex">
+	<view wx:for="{{beautyList}}" wx:key="item" class="menu-item" mode="widthFix">
+		<image src="{{item.imgurl}}"></image>
+		<view>{{item.name}}</view>
+	</view>
+</view>

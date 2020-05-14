@@ -3,7 +3,8 @@
     "pages/steamer/steamer",
     "pages/airship/airship",
     "pages/trucks/trucks",
-    "pages/plane/plane"
+    "pages/plane/plane",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
