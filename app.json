@@ -1,13 +1,45 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+  "pages": [
+    "pages/steamer/steamer",
+    "pages/airship/airship",
+    "pages/trucks/trucks",
+    "pages/plane/plane"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "My WeChat Mini",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#E77686",
+    "list": [
+      {
+        "pagePath": "pages/steamer/steamer",
+        "text": "轮船",
+        "iconPath": "assets/image/page_1_def.png",
+        "selectedIconPath": "assets/image/page_1.png"
+      },
+      {
+        "pagePath": "pages/airship/airship",
+        "text": "飞艇",
+        "iconPath": "assets/image/page_2_def.png",
+        "selectedIconPath": "assets/image/page_2.png"
+      },
+      {
+        "pagePath": "pages/trucks/trucks",
+        "text": "飞机",
+        "iconPath": "assets/image/page_3_def.png",
+        "selectedIconPath": "assets/image/page_3.png"
+      },
+      {
+        "pagePath": "pages/plane/plane",
+        "text": "货车",
+        "iconPath": "assets/image/page_4_def.png",
+        "selectedIconPath": "assets/image/page_4.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
