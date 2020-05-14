@@ -1,11 +1,21 @@
 // pages/airship/airship.js
 Page({
+  /**
+   * 
+   */
+  setTabIndex(e) {
+    let activeIndex = parseInt(e.currentTarget.dataset.i);
+    this.setData({
+      activeIndex
+    });
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userList: ["Android", "前端", "ios"],
+    activeIndex: 0,
   },
 
   /**

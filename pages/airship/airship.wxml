@@ -1,2 +1,19 @@
 <!--pages/airship/airship.wxml-->
-<text>pages/airship/airship.wxml</text>
+<!-- <view style="display:flex" wx:for="{{userList}}" wx:key="item">
+	{{item}}
+	<button>Delete</button>
+</view> -->
+<view class="tab">
+	<view data-i="{{0}}" bindtap="setTabIndex" class="{{activeIndex===0?'active':''}}">最新热卖</view>
+	<view data-i="{{1}}" bindtap="setTabIndex" class="{{activeIndex===1?'active':''}}">特价清仓</view>
+	<view data-i="{{2}}" bindtap="setTabIndex" class="{{activeIndex===2?'active':''}}">附近好物</view>
+</view>
+<view wx:if="{{activeIndex===0}}">
+	<view class="text">111111111</view>
+</view>
+<view wx:if="{{activeIndex===1}}">
+	<view class="text">222222222</view>
+</view>
+<view wx:if="{{activeIndex===2}}">
+	<view class="text">333333333</view>
+</view>

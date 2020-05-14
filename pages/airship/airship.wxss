@@ -1,1 +1,21 @@
 /* pages/airship/airship.wxss */
+.tab {
+  display: flex;
+}
+
+.tab view {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.tab view.active {
+  border-bottom: 4rpx solid red;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
