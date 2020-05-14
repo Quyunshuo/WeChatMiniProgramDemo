@@ -1,7 +1,7 @@
 // pages/airship/airship.js
 Page({
   /**
-   * 
+   * 设置导航条的选中位置
    */
   setTabIndex(e) {
     let activeIndex = parseInt(e.currentTarget.dataset.i);
@@ -10,12 +10,19 @@ Page({
     });
   },
 
+  closeShadow() {
+    this.setData({
+      isShowShadow: false
+    })
+  },
+
   /**
    * 页面的初始数据
    */
   data: {
     userList: ["Android", "前端", "ios"],
     activeIndex: 0,
+    isShowShadow: true,
   },
 
   /**

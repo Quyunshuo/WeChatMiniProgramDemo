@@ -17,3 +17,8 @@
 <view wx:if="{{activeIndex===2}}">
 	<view class="text">333333333</view>
 </view>
+
+<view class="shadow" wx:if="{{isShowShadow}}">
+	<view class="close" bindtap="closeShadow">x</view>
+	<image mode="widthFix" src="https://s1.hdslb.com/bfs/static/jinkela/space/asserts/icon-auth.png"></image>
+</view>
