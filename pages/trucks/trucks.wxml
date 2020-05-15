@@ -1,2 +1,20 @@
-<!--pages/trucks/trucks.wxml-->
-<text>pages/trucks/trucks.wxml</text>
+<!--pages/trucks/trucks.wxml 购物车-->
+<view class="item" wx:for="{{commoditys}}" wx:key="item">
+	<image data-id="{{item.id}}" bindtap="select" class="img" src="{{item.selected?selected:unselected}}"></image>
+	<view class="main">
+		<view>{{item.name}}</view>
+		<view class="desc">{{item.specification}}</view>
+	</view>
+	<view class="univalence">{{item.univalence}}</view>
+	<view class="conuter">
+		<view data-id="{{item.id}}" class="btn jian" bindtap="count_jian">-</view>
+		<view>{{item.quantity}}</view>
+		<view data-id="{{item.id}}" class="btn add" bindtap="count_add">+</view>
+	</view>
+</view>
+<view class="footer">
+	<image class="checkAll" bindtap="selectAll" src="{{isSelectAll?selected:unselected}}">
+	</image>
+	<text style="font-weight:bold">¥ {{totalPrice}}</text>
+	<view bindtap="settleAccounts" class="btn">结算</view>
+</view>
