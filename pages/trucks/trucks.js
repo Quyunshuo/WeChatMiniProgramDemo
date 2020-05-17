@@ -1,4 +1,18 @@
 // pages/trucks/trucks.js
+// let {
+//   $attr
+// } = require('../../utils/appUtils.js')
+// let {
+//   $toast
+// } = require('../../utils/appUtils.js')
+/**
+ * ES6写法
+ */
+import {
+  $attr,
+  $toast
+} from '../../utils/appUtils.js'
+
 Page({
 
   /**
@@ -245,25 +259,3 @@ Page({
     }
   }
 })
-
-/**
- * 查询
- * @param {*} e 
- * @param {*} key 
- */
-function $attr(e, key) {
-  return e.currentTarget.dataset[key];
-}
-/**
- * 对Toast封装
- * @param {内容} title 
- * @param {图标} icon 
- * @param {时间} duration 
- */
-function $toast(title, icon, duration) {
-  return wx.showToast({
-    title: title,
-    icon: icon,
-    duration: duration
-  })
-}
