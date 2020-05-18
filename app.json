@@ -2,6 +2,7 @@
   "pages": [
     "pages/steamer/steamer",
     "pages/airship/airship",
+    "pages/store/store",
     "pages/trucks/trucks",
     "pages/plane/plane",
     "pages/detail/detail"
@@ -21,6 +22,12 @@
         "text": "轮船",
         "iconPath": "assets/image/page_1_def.png",
         "selectedIconPath": "assets/image/page_1.png"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "text": "商城",
+        "iconPath": "assets/image/page_store_def.png",
+        "selectedIconPath": "assets/image/page_store.png"
       },
       {
         "pagePath": "pages/airship/airship",

@@ -1,0 +1,14 @@
+<!--pages/store/store.wxml-->
+<view class="searcher">
+	<image src="../../assets/icons/icon_search.png"></image>
+	<input placeholder="第三行代码"></input>
+	<image src="../../assets/icons/icon_rich_scan.png"></image>
+</view>
+
+<view style="flex:1; display:flex; padding-top:15rpx">
+	<view class="left-menu">
+		<view class="{{activeType===1?'active':''}}" data-type="1" bindtap="selectMenu">衣服</view>
+		<view class="{{activeType===2?'active':''}}" data-type="2" bindtap="selectMenu">玩具</view>
+	</view>
+	<view class="right-goods"></view>
+</view>

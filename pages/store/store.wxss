@@ -1,0 +1,53 @@
+/* pages/store/store.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.searcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searcher image {
+  height: 50rpx;
+  width: 50rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.searcher input {
+  height: 55rpx;
+  flex: 1;
+  padding-left: 20rpx;
+  font-size: 25rpx;
+  border: 1px solid rgb(0, 225, 255);
+}
+
+.left-menu {
+  text-align: center;
+  width: 240rpx;
+  background-color: #f9f9f9;
+  color: #999;
+}
+
+.left-menu view {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 28rpx;
+  letter-spacing: 5rpx;
+  border-left: 6rpx solid transparent;
+}
+
+.left-menu view.active {
+  color: skyblue;
+  background: #fff;
+  border-left-color: skyblue;
+}
+
+.right-goods {
+  flex: 1;
+  background-color: #fff;
+}
