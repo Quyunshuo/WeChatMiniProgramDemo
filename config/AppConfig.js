@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://www.fastmock.site/mock/003480cd18391f9f3ef48e7aabac0230/wechat';
