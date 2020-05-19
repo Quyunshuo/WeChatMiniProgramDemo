@@ -18,14 +18,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 解构typelist
-    $get('/typelist', ({
-      typelist
-    }) => {
-      this.setData({
-        typelist: typelist
-      });
-    })
+    // Promise方式
+    // this.getTypeListPromise();
+
+    // Async方式
+    this.getTypeListAsync();
   },
 
   /**
@@ -75,6 +72,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 采用async await 方式请求
+   */
+  async getTypeListAsync() {
+    let {
+      typelist
+    } = await $get('/typelist');
+    this.setData({
+      typelist
+    });
+  },
+
+  /**
+   * 普通Promise方式请求
+   */
+  getTypeListPromise() {
+    $get('/typelist').then(({
+      typelist
+    }) => {
+      this.setData({
+        typelist
+      });
+    });
   },
 
   /**

@@ -59,39 +59,64 @@ export function $toast(title, icon, duration) {
 /**
  * GET请求
  * @param {接口地址} url 
- * @param {回调} success 
  */
-export function $get(url, success) {
-  $request(url, 'GET', success);
+export function $get(url) {
+  return $request(url, 'GET');
 }
 
 /**
  * POST请求
  * @param {接口地址} url 
- * @param {回调} success 
  */
-export function $post(url, success) {
-  $request(url, 'POST', success);
+export function $post(url) {
+  return $request(url, 'POST');
 }
 
+// 普通方式
+// /**
+//  * 对wx.request()封装
+//  * @param {接口地址} url 
+//  * @param {请求方式} method 
+//  * @param {回调} success 
+//  */
+// function $request(url, method, success) {
+//   wx.showLoading({
+//     title: '加载中...',
+//   });
+//   wx.request({
+//     method,
+//     url: BASE_URL + url,
+//     success: res => {
+//       success(res.data)
+//     },
+//     complete() {
+//       wx.hideLoading()
+//     }
+//   });
+// }
+
 /**
- * 对wx.request()封装
+ * 对wx.request()封装 Promise方式
  * @param {接口地址} url 
  * @param {请求方式} method 
- * @param {回调} success 
  */
-function $request(url, method, success) {
+function $request(url, method) {
   wx.showLoading({
     title: '加载中...',
   });
-  wx.request({
-    method,
-    url: BASE_URL + url,
-    success: res => {
-      success(res.data)
-    },
-    complete() {
-      wx.hideLoading()
-    }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      method,
+      url: BASE_URL + url,
+      success: res => {
+        resolve(res.data)
+      },
+      fail(e) {
+        reject(e);
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    });
   });
 }
