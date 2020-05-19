@@ -10,13 +10,22 @@ Page({
    */
   data: {
     activeType: 1,
+    typelist: "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'https://www.fastmock.site/mock/003480cd18391f9f3ef48e7aabac0230/wechat/typelist',
+      success: res => {
+        console.log(res);
+        this.setData({
+          typelist: res.data.typelist
+        })
+      }
+    })
   },
 
   /**

@@ -29,15 +29,17 @@ page {
 .left-menu {
   text-align: center;
   width: 240rpx;
+  height: 100%;
   background-color: #f9f9f9;
   color: #999;
 }
 
 .left-menu view {
-  padding-top: 20rpx;
-  padding-bottom: 20rpx;
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
   font-size: 28rpx;
-  letter-spacing: 5rpx;
+  letter-spacing: 3rpx;
+  overflow-y: scroll;
   border-left: 6rpx solid transparent;
 }
 

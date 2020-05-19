@@ -6,9 +6,8 @@
 </view>
 
 <view style="flex:1; display:flex; padding-top:15rpx">
-	<view class="left-menu">
-		<view class="{{activeType===1?'active':''}}" data-type="1" bindtap="selectMenu">衣服</view>
-		<view class="{{activeType===2?'active':''}}" data-type="2" bindtap="selectMenu">玩具</view>
-	</view>
+	<scroll-view scroll-y class="left-menu">
+		<view wx:for="{{typelist}}" wx:key="item" class="{{activeType===item.id?'active':''}}" data-type="{{item.id}}" bindtap="selectMenu">{{item.name}}</view>
+	</scroll-view>
 	<view class="right-goods"></view>
 </view>
