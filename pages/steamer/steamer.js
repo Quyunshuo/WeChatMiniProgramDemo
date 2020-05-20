@@ -77,7 +77,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    // 让下拉刷新停止时间设置为500ms
+    setTimeout(() => {
+      wx.stopPullDownRefresh();
+    }, 500);
   },
 
   /**

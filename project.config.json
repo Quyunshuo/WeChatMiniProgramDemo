@@ -61,6 +61,13 @@
 					"id": -1,
 					"name": "Store",
 					"pathName": "pages/store/store",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/steamer/steamer",
 					"scene": null
 				}
 			]
