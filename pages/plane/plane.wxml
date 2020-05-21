@@ -1,2 +1,3 @@
 <!--pages/plane/plane.wxml-->
-<text>pages/plane/plane.wxml</text>
+<button bindtap="getLocation">获取当前位置</button>
+<view>位置: {{userLocation}}</view>

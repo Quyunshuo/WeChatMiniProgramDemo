@@ -68,6 +68,13 @@
 					"id": -1,
 					"name": "首页",
 					"pathName": "pages/steamer/steamer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "This me",
+					"pathName": "pages/plane/plane",
 					"scene": null
 				}
 			]

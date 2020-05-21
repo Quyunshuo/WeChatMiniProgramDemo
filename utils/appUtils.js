@@ -120,3 +120,11 @@ function $request(url, method) {
     });
   });
 }
+
+/**
+ * 将数据转为string
+ * @param  {...any} args 
+ */
+export function $parseVars2String(...args) {
+  return args.join();
+}
