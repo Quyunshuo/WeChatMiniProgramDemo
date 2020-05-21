@@ -2,13 +2,15 @@ import {
   TENCENT_MAP_KEY
 } from '../config/AppConfig'
 import {
-  $parseVars2String
+  $parseVars2String,
+  $get
 } from '../utils/appUtils'
 
 /**
  * 对 wx.getLocation() 封装
+ * 获取位置信息并返回经纬度
  */
-export function getLocatio() {
+export function $getLocatio() {
   return new Promise((resolve, reject) => {
     // wx.getLocation会要求获取位置权限
     wx.getLocation({
@@ -42,23 +44,34 @@ export function getLocatio() {
 }
 
 /**
- * 使用腾讯地图api获取位置信息
+ * 使用腾讯地图api将经纬度转换为地址
+ * @param {经度} la 
+ * @param {纬度} lg 
  */
-export function getAddress() {
+export function $convertLocation2Address(la, lg) {
   return new Promise(async (resolve, reject) => {
-    let {
-      la,
-      lg
-    } = await getLocatio();
-    wx.request({
-      url: 'https://apis.map.qq.com/ws/geocoder/v1/?location=',
-      data: {
+    let res = await $get(
+      'https://apis.map.qq.com/ws/geocoder/v1', {
         location: $parseVars2String(la, lg),
         key: TENCENT_MAP_KEY,
-      },
-      success: res => {
-        resolve(res.data);
-      },
-    })
+      }
+    )
+    resolve(res);
+  });
+}
+
+/**
+ * 使用腾讯地图api将地址转换为经纬度
+ * @param {地址} address 
+ */
+export function $convertAddress2Location(address) {
+  return new Promise(async (resolve, reject) => {
+    let res = await $get(
+      'https://apis.map.qq.com/ws/geocoder/v1', {
+        address: address,
+        key: TENCENT_MAP_KEY,
+      }
+    )
+    resolve(res);
   });
 }

@@ -1,6 +1,8 @@
 // pages/plane/plane.js
 import {
-  getAddress
+  $convertLocation2Address,
+  $getLocatio,
+  $convertAddress2Location
 } from '../../utils/location'
 
 Page({
@@ -72,9 +74,10 @@ Page({
    * 获取当前的位置
    */
   async getLocation() {
-    let res = await getAddress();
+    let locatio = await $getLocatio();
+    let address = await $convertLocation2Address(locatio.la, locatio.lg);
     this.setData({
-      userLocation: res.result.address
+      userLocation: address.result.address
     });
   }
 })

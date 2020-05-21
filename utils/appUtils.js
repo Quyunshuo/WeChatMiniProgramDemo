@@ -59,17 +59,19 @@ export function $toast(title, icon, duration) {
 /**
  * GET请求
  * @param {接口地址} url 
+ * @param {传的值} data 
  */
-export function $get(url) {
-  return $request(url, 'GET');
+export function $get(url, data) {
+  return $request(url, 'GET', data);
 }
 
 /**
  * POST请求
  * @param {接口地址} url 
+ * @param {传的值} data 
  */
-export function $post(url) {
-  return $request(url, 'POST');
+export function $post(url, data) {
+  return $request(url, 'POST', data);
 }
 
 // 普通方式
@@ -99,15 +101,17 @@ export function $post(url) {
  * 对wx.request()封装 Promise方式
  * @param {接口地址} url 
  * @param {请求方式} method 
+ * @param {传的值} data 
  */
-function $request(url, method) {
+function $request(url, method, data) {
   wx.showLoading({
     title: '加载中...',
   });
   return new Promise((resolve, reject) => {
     wx.request({
       method,
-      url: BASE_URL + url,
+      data,
+      url: url.startsWith('http') ? url : (BASE_URL + url),
       success: res => {
         resolve(res.data)
       },
