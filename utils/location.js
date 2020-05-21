@@ -6,9 +6,9 @@ import {
 } from '../utils/appUtils'
 
 /**
- * 获取位置信息
+ * 对 wx.getLocation() 封装
  */
-export function getAddress() {
+export function getLocatio() {
   return new Promise((resolve, reject) => {
     // wx.getLocation会要求获取位置权限
     wx.getLocation({
@@ -32,17 +32,33 @@ export function getAddress() {
          * speed: -1 速度，单位 m/s
          * verticalAccuracy: 65 垂直精度，单位 m（Android 无法获取，返回 0）
          */
-        wx.request({
-          url: 'https://apis.map.qq.com/ws/geocoder/v1/?location=',
-          data: {
-            location: $parseVars2String(la, lg),
-            key: TENCENT_MAP_KEY,
-          },
-          success: res => {
-            resolve(res.data);
-          },
-        })
+        resolve({
+          la,
+          lg
+        });
       }
     });
+  });
+}
+
+/**
+ * 使用腾讯地图api获取位置信息
+ */
+export function getAddress() {
+  return new Promise(async (resolve, reject) => {
+    let {
+      la,
+      lg
+    } = await getLocatio();
+    wx.request({
+      url: 'https://apis.map.qq.com/ws/geocoder/v1/?location=',
+      data: {
+        location: $parseVars2String(la, lg),
+        key: TENCENT_MAP_KEY,
+      },
+      success: res => {
+        resolve(res.data);
+      },
+    })
   });
 }
