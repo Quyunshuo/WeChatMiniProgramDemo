@@ -1,0 +1,31 @@
+.btn {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx;
+  padding-bottom: 6rpx;
+  padding-left: 10rpx;
+}
+
+.btn.up {
+  background: powderblue;
+}
+
+.btn.down {
+  background: orange;
+}
+
+.btn.delete {
+  background: #eee;
+}
+
+.subject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+}

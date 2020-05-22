@@ -5,7 +5,8 @@
     "pages/store/store",
     "pages/trucks/trucks",
     "pages/plane/plane",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/updown/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

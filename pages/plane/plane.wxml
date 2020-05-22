@@ -1,3 +1,4 @@
 <!--pages/plane/plane.wxml-->
 <button bindtap="getLocation">获取当前位置</button>
 <view>位置: {{userLocation}}</view>
+<button bindtap="intent">跳转</button>

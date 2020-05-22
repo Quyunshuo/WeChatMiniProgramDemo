@@ -1,0 +1,8 @@
+<view class="subject" wx:for="{{userList}}" wx:key="item">
+	<view>{{index+1}}.{{item}}</view>
+	<view>
+		<view bindtap="up" data-i="{{index}}" wx:if="{{index>0}}" class="btn up">⬆️</view>
+		<view bindtap="down" data-i="{{index}}" wx:if="{{index< userList.length-1}}" class="btn down">⬇️</view>
+		<view bindtap="delete" data-i="{{index}}" class="btn delete">❌</view>
+	</view>
+</view>

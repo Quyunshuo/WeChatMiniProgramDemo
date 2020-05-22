@@ -1,9 +1,7 @@
-// pages/plane/plane.js
+// pages/updown/index.js
 import {
-  $convertLocation2Address,
-  $getLocatio,
-  $convertAddress2Location
-} from '../../utils/location'
+  $attr
+} from '../../utils/appUtils'
 
 Page({
 
@@ -11,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userLocation: "",
+    userList: [
+      "AAAAAAAAAA", "BBBBBBBBBB", "CCCCCCCCCC", "DDDDDDDDDD"
+    ],
   },
 
   /**
@@ -71,22 +71,40 @@ Page({
   },
 
   /**
-   * 获取当前的位置
+   * 删除
    */
-  async getLocation() {
-    let locatio = await $getLocatio();
-    let address = await $convertLocation2Address(locatio.la, locatio.lg);
+  delete(e) {
+    let i = $attr(e, 'i');
+    // 从数组中删除指定下标的元素及个数
+    this.data.userList.splice(i, 1);
     this.setData({
-      userLocation: address.result.address
-    });
+      userList: this.data.userList
+    })
   },
 
   /**
-   * 跳转
+   * 上移
    */
-  intent() {
-    wx.navigateTo({
-      url: '../updown/index',
+  up(e) {
+    let i = $attr(e, 'i');
+    let tmp = this.data.userList[i]
+    this.data.userList[i] = this.data.userList[i - 1]
+    this.data.userList[i - 1] = tmp
+    this.setData({
+      userList: this.data.userList
+    })
+  },
+
+  /**
+   * 下移
+   */
+  down(e) {
+    let i = $attr(e, 'i');
+    let tmp = this.data.userList[i]
+    this.data.userList[i] = this.data.userList[i + 1]
+    this.data.userList[i + 1] = tmp
+    this.setData({
+      userList: this.data.userList
     })
   }
 })
