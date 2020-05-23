@@ -82,6 +82,13 @@
 					"id": -1,
 					"name": "updown",
 					"pathName": "pages/updown/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "美女详情页",
+					"pathName": "pages/girls/girls",
 					"scene": null
 				}
 			]

@@ -1,6 +1,8 @@
-// pages/steamer/steamer.js
-Page({
+import {
+  $attr
+} from "../../utils/appUtils";
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -12,27 +14,35 @@ Page({
     ],
     // 八个女孩的数据
     beautyList: [{
+      girlId: 1001,
       imgurl: "https://img2.woyaogexing.com/2020/05/13/e8a1e9f885e04816abd1c32360a63ee8!400x400.jpeg",
       name: "1号"
     }, {
+      girlId: 1002,
       imgurl: "https://img2.woyaogexing.com/2020/05/13/9da6d8ca9c5642789fc248c3c56ed04e!400x400.jpeg",
       name: "2号"
     }, {
+      girlId: 1003,
       imgurl: "https://img2.woyaogexing.com/2020/05/13/08c9d870fda64606a5439e02984a2780!400x400.jpeg",
       name: "3号"
     }, {
+      girlId: 1004,
       imgurl: "https://img2.woyaogexing.com/2020/05/13/fc483cb8156b48148df7bf4875cb4c69!400x400.jpeg",
       name: "4号"
     }, {
+      girlId: 1005,
       imgurl: "https://img2.woyaogexing.com/2020/05/12/2c9a4a5d96344e0cabb2f97ff8247679!400x400.jpeg",
       name: "5号"
     }, {
+      girlId: 1006,
       imgurl: "https://img2.woyaogexing.com/2020/05/13/64cb380e736c4731902aea818e8838e7!400x400.jpeg",
       name: "6号"
     }, {
+      girlId: 1007,
       imgurl: "https://img2.woyaogexing.com/2020/05/12/2aee922fc3f54bc7ac3fa6be367405f5!400x400.jpeg",
       name: "7号"
     }, {
+      girlId: 1008,
       imgurl: "https://img2.woyaogexing.com/2020/05/12/d12e825f35b74302bd57283c49e93ce9!400x400.jpeg",
       name: "8号"
     }],
@@ -95,5 +105,15 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /**
+   * 跳转到详情页
+   * @param {参数} params 
+   */
+  jumpToDetailsPage: function (params) {
+    let id = $attr(params, "girlid")
+    wx.navigateTo({
+      url: '../girls/girls?girlid='+id,
+    })
+  },
 })

@@ -6,7 +6,8 @@
     "pages/trucks/trucks",
     "pages/plane/plane",
     "pages/detail/detail",
-    "pages/updown/index"
+    "pages/updown/index",
+    "pages/girls/girls"
   ],
   "window": {
     "backgroundTextStyle": "light",

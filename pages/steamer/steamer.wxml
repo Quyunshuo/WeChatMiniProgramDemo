@@ -8,7 +8,7 @@
 <!-- 女孩列表 -->
 <view class="menu flex">
 	<view wx:for="{{beautyList}}" wx:key="item" class="menu-item" mode="widthFix">
-		<image src="{{item.imgurl}}"></image>
+		<image src="{{item.imgurl}}" data-girlid="{{item.girlId}}" bindtap="jumpToDetailsPage"></image>
 		<view>{{item.name}}</view>
 	</view>
 </view>
