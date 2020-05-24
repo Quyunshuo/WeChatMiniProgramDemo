@@ -1,0 +1,6 @@
+<view class="menu">
+	<view class="label">{{label}}</view>
+	<view class="list">
+		<view data-i="{{index}}" bindtap="select" class="{{activeIndex===index?'active':''}}" wx:for="{{list}}" wx:key="item">{{item}}</view>
+	</view>
+</view>

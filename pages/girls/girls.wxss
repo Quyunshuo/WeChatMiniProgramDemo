@@ -2,3 +2,13 @@
   width: 100%;
   height: 70vh;
 }
+
+.name {
+  font-size: 36rpx;
+  padding: 5rpx;
+  font-weight: bold;
+}
+
+.price {
+  color: #f00;
+}

@@ -3,3 +3,7 @@
 		<image data-src="{{item}}" bindtap="preview" src="{{item}}" mode="widthFix" style="width: 100%"></image>
 	</swiper-item>
 </swiper>
+<view class="name">{{details.name}}</view>
+<view class="price">¥ {{details.price}}</view>
+<specification label="颜色" list="{{typelist1}}"></specification>
+<specification label="尺寸" list="{{typelist2}}"></specification>
