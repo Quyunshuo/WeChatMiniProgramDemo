@@ -1,0 +1,5 @@
+<!-- <view class="searcher">
+	<input bindconfirm="search" bindinput="setValue" value="{{keyword}}" confirm-type="search" placeholder="关键字"></input>
+	<image bindtap="search" class="btn" src="../../assets/icons/icon_search.png"></image>
+</view> -->
+<searcher bind:onSearcherEvent="onSearcherEvent"></searcher>

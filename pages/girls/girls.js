@@ -71,10 +71,10 @@ Page({
       name: "小米55英寸4K曲面屏豪华智能电视",
       price: 4000,
     },
-    typelist1: [
+    typeColorList: [
       "银灰色", "亮黑色"
     ],
-    typelist2: [
+    typeSizeList: [
       "55寸", "65寸", "75寸"
     ],
   },
@@ -146,5 +146,19 @@ Page({
       urls: this.data.bannerlist,
       current: $attr(params, 'src'),
     })
+  },
+
+  /**
+   * 颜色指示器更改监听事件
+   */
+  onChangeColor(e) {
+    console.log(this.data.typeColorList[e.detail]);
+  },
+
+  /**
+   * 尺寸指示器更改监听事件
+   */
+  onChangeSize(e) {
+    console.log(this.data.typeSizeList[e.detail]);
   }
 })

@@ -5,5 +5,5 @@
 </swiper>
 <view class="name">{{details.name}}</view>
 <view class="price">¥ {{details.price}}</view>
-<specification label="颜色" list="{{typelist1}}"></specification>
-<specification label="尺寸" list="{{typelist2}}"></specification>
+<specification label="颜色" bind:change="onChangeColor" list="{{typeColorList}}"></specification>
+<specification label="尺寸" bind:change="onChangeSize" list="{{typeSizeList}}"></specification>

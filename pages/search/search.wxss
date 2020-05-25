@@ -1,0 +1,20 @@
+page {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.searcher {
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+
+.searcher input {
+  flex: 1;
+}
+
+.searcher .btn {
+  width: 40rpx;
+  height: 40rpx;
+}

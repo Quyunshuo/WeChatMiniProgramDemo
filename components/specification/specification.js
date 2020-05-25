@@ -34,6 +34,8 @@ Component({
       this.setData({
         activeIndex: $attr(e, 'i')
       });
+      // 把值传出去
+      this.triggerEvent("change", this.data.activeIndex);
     }
   }
 })

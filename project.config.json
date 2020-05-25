@@ -89,6 +89,13 @@
 					"id": -1,
 					"name": "美女详情页",
 					"pathName": "pages/girls/girls",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索页",
+					"pathName": "pages/search/search",
 					"scene": null
 				}
 			]
