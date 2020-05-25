@@ -11,7 +11,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    keyword: ""
+    keyword: "",
+    testData: ""
   },
 
   /**
@@ -32,6 +33,34 @@ Component({
      */
     setValue(e) {
       this.data.keyword = e.detail.value;
+      this.setData({
+        testData: this.data.keyword
+      });
+    }
+  },
+
+  /**
+   * 生命周期
+   */
+  lifetimes: {
+
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      console.log("attached");
+    },
+
+    detached: function () {
+      // 在组件实例被从页面节点树移除时执行
+      console.log("detached");
+    },
+  },
+
+  /**
+   * 数据监听器（观察者模式）
+   */
+  observers: {
+    "testData": function (data) {
+      console.log("监听到数据更改:" + data);
     }
   }
 })
